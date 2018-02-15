@@ -42,10 +42,6 @@ function OlistoAccessory(log, config, platform) {
     this.type = "push"
   }
 
-  if (!this.connecturl.startsWith("https://connect.olisto.com/c/")) {
-    log.error('There is something wrong with your connect on URL! Make sure your URL starts with "https://"')
-  }
-
   if (this.type == "push" || this.type == "switch") {
     this.service = new Service.Switch(this.name);
 
@@ -72,7 +68,7 @@ OlistoAccessory.prototype.getInformationService = function() {
     .setCharacteristic(Characteristic.Name, this.name)
     .setCharacteristic(Characteristic.Manufacturer, 'StefanNienhuis')
     .setCharacteristic(Characteristic.Model, this.type.charAt(0).toUpperCase() + this.type.slice(1))
-    .setCharacteristic(Characteristic.SerialNumber, this.connecturl.replace("https://connect.olisto.com/c/", ""));
+    .setCharacteristic(Characteristic.SerialNumber, this.connecturl);
 
   return informationService;
 }
