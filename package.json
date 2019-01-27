@@ -1,6 +1,6 @@
 {
   "name": "homebridge-olisto",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "With this plugin you can connect your Olisto services to homebridge",
   "main": "index.js",
   "dependencies": {
