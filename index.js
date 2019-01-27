@@ -95,7 +95,7 @@ OlistoAccessory.prototype.setOn = function(on, callback) {
 
   } else if (accessory.type == "switch" || accessory.type == "outlet") {
     // Accessory is an switch or outlet
-    accessory.connector.setValue('' + +on);
+    accessory.connector.setValue(this.name + +on);
     callback(null);
   }
 }
